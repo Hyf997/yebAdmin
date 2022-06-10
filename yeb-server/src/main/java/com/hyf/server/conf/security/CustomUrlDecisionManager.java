@@ -1,5 +1,7 @@
 package com.hyf.server.conf.security;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.hyf.server.CustomAuthorityDeserializer;
 import org.springframework.security.access.AccessDecisionManager;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.access.ConfigAttribute;
@@ -33,6 +35,7 @@ public class CustomUrlDecisionManager implements AccessDecisionManager {
                     return;
                 }
             }
+
             Collection<? extends GrantedAuthority> authorities =
                     authentication.getAuthorities();
             for (GrantedAuthority authority : authorities) {

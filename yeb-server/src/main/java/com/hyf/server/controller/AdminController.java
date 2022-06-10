@@ -1,20 +1,17 @@
 package com.hyf.server.controller;
 
 
+
 import com.hyf.server.pojo.Admin;
 import com.hyf.server.pojo.RespBean;
 import com.hyf.server.pojo.Role;
 import com.hyf.server.service.IAdminService;
 import com.hyf.server.service.IRoleService;
 import io.swagger.annotations.ApiOperation;
-import io.swagger.models.auth.In;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
-import javax.validation.constraints.Max;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
 import java.util.List;
 
 /**
@@ -45,6 +42,7 @@ public class AdminController {
     @ApiOperation(value = "更新操作员")
     @PutMapping(value = "/")
     public RespBean updateAdmin( @RequestBody Admin admin){
+
         if (adminService.updateById(admin)){
             return RespBean.success("更新成功");
         }

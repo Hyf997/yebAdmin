@@ -1,5 +1,7 @@
 package com.hyf.server.conf.security;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.hyf.server.CustomAuthorityDeserializer;
 import com.hyf.server.pojo.Menu;
 import com.hyf.server.pojo.Role;
 import com.hyf.server.service.IMenuService;
@@ -26,6 +28,8 @@ public class CustomFilter implements FilterInvocationSecurityMetadataSource {
     @Autowired
     private IMenuService menuService;
     AntPathMatcher antPathMatcher = new AntPathMatcher();
+
+
     @Override
     public Collection<ConfigAttribute> getAttributes(Object object) throws
     IllegalArgumentException {

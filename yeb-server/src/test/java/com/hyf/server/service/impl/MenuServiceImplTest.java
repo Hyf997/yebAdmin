@@ -27,12 +27,8 @@ class MenuServiceImplTest {
     private AdminMapper adminMapper;
     @Test
     void getMenusByAdminId() {
-
-        List<Menu> menus = menuMapper.getMenusByAdminId(1);
+        List<Menu> menus = menuMapper.getMenusByAdminId(3);
         System.out.println(menus.get(0).getName());
-
-        Admin admin = adminMapper.selectById(1);
-        System.out.println(admin.getPassword());
     }
 
     @Test
