@@ -78,6 +78,8 @@ public class Admin implements Serializable, UserDetails{
     public Collection<? extends GrantedAuthority> getAuthorities() {
         List<SimpleGrantedAuthority> authorities = roles.stream().map(role -> new SimpleGrantedAuthority(role.getName()))
                 .collect(Collectors.toList());
+
+        authorities.stream().forEach(System.out::println);
         return authorities;
     }
 

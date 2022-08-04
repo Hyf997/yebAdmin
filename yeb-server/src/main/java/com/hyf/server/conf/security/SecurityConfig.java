@@ -5,6 +5,7 @@ import com.hyf.server.service.IAdminService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.security.access.ConfigAttribute;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.config.annotation.ObjectPostProcessor;
@@ -65,10 +66,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                "/system/cfg/menu/**",
                 "/v2/api-docs/**",
                 "/captcha",
-                "ws/**"
+                "/ws/**"
         );
     }
-
 
     @Bean
     @Override

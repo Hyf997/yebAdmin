@@ -18,14 +18,14 @@ spring:
       #从连接池返回的连接的自动提交
       auto-commit: true
       # 连接最大存活，0表示永久存活，默认1800000（30分钟）
-      max-lifetime: 1800000
+#      max-lifetime: 1800000
       #连接超时时间。默认30000（30s）
       connection-timeout: 30000
       #测试连接是否可用的查询语句
       connection-test-query: SELECT 1
   # Redis配置
   redis:
-    timeout: 10000ms                        # 连接超时时间
+#    timeout: 10000ms                        # 连接超时时间
     host: 8.131.61.35                   # Redis服务器地址
     password: 314159
     port: 6379                              # Redis服务器端口

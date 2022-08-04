@@ -19,6 +19,7 @@ import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
 /**
  * <p>
@@ -72,6 +73,7 @@ public class EmployeeServiceImpl extends ServiceImpl<EmployeeMapper, Employee> i
      */
     @Override
     public RespBean addEmp(final Employee employee) {
+        System.out.println(employee);
         //处理合同期限，保留两位小数
         LocalDate beginContract = employee.getBeginContract();
         LocalDate endContract = employee.getEndContract();
@@ -80,10 +82,11 @@ public class EmployeeServiceImpl extends ServiceImpl<EmployeeMapper, Employee> i
         employee.setContractTerm(Double.parseDouble(decimalFormat.format(days/365.00)));
         if(1==employeeMapper.insert(employee))
         {
+            System.out.println(employeeMapper.getEmployee(employee.getId()).size());
             Employee emp = employeeMapper.getEmployee(employee.getId()).get(0);
             //数据库记录发送的信息
-//            String msg = UUID.randomUUID().toString();
-            String msg = "123456";
+            String msg = UUID.randomUUID().toString();
+
             MailLog mailLog = new MailLog();
             mailLog.setMsgId(msg);
             mailLog.setEid(emp.getId());

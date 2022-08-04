@@ -59,7 +59,6 @@ public class Employee implements Serializable {
     private String wedlock;
 
     @ApiModelProperty(value = "民族ID")
-
     private Integer nationId;
 
     @ApiModelProperty(value = "籍贯")

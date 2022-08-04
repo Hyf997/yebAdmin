@@ -41,6 +41,7 @@ public class CustomFilter implements FilterInvocationSecurityMetadataSource {
             //判断请求url与菜单角色是否匹配
             if (antPathMatcher.match(menu.getUrl(),requestUrl)){
                 String[] str = menu.getRoles().stream().map(Role::getName).toArray(String[]::new);
+                System.out.println(menu.getUrl()+"  权限匹配");
                 return SecurityConfig.createList(str);
             }
         }

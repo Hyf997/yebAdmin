@@ -39,6 +39,7 @@ public class RabbitMQConfig {
          * data:消息唯一标识
          * ack：确认结果
          * cause：失败原因
+         *
          */
         rabbitTemplate.setConfirmCallback((data,ack,cause)->{
             String msgId = data.getId();

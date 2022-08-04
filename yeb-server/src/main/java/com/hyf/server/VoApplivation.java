@@ -13,7 +13,6 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
 @SpringBootApplication
 @MapperScan("com.hyf.server.mapper")
 @EnableScheduling
-@EnableGlobalMethodSecurity(prePostEnabled = true)
 public class VoApplivation {
     public static void main(String[] args) {
         SpringApplication.run(VoApplivation.class,args);
